@@ -1057,7 +1057,7 @@ int fsck_finish(struct fsck_options *options)
 
 		blob = lookup_blob(the_repository, oid);
 		if (!blob) {
-			struct object *obj = lookup_unknown_object(oid->hash);
+			struct object *obj = lookup_unknown_object(oid);
 			ret |= report(options, obj,
 				      FSCK_MSG_GITMODULES_BLOB,
 				      "non-blob found at .gitmodules");
